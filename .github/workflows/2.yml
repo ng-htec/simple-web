@@ -1,0 +1,23 @@
+name: Make 2
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - "2/**"
+  pull_request:
+    types: [closed]
+    branches: [ main ]
+    paths:
+      - "2/**"
+
+
+jobs:
+  build:
+    uses: ng-htec/workflows/.github/workflows/BuildAndPublishDockerImage.yml@main
+    with:
+      what_to_build: 2
+    secrets:
+      registry: ${{ secrets.REGISTRY }}
+      username: ${{ secrets.REGISTRY_USERNAME }}
+      password: ${{ secrets.REGISTRY_PASSWORD }}
