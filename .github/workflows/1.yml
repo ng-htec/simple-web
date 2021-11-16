@@ -15,7 +15,7 @@ on:
 jobs:
   build:
     uses: ng-htec/workflows/.github/workflows/BuildAndPublishDockerImage.yml@main
-    if: ${{ github.push.paths == '1/**' }}
+    if: ${{ github.paths == '1/**' }}
     with:
       what_to_build: 1
     secrets:
