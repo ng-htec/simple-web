@@ -24,3 +24,4 @@ jobs:
           registry: ${{ secrets.REGISTRY }}
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
+        run: echo d
