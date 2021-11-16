@@ -14,11 +14,11 @@ on:
 
 jobs:
   build:
-    steps:
-      - uses: ng-htec/workflows/.github/workflows/BuildAndPublishDockerImage.yml@main
-        if: ${{ github.event_name == 'push' && github.push.branches == 'main' && github.push.paths == '1/**' }}
-        with:
-          what_to_build: 1
-          registry: ${{ secrets.REGISTRY }}
-          username: ${{ secrets.REGISTRY_USERNAME }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
+    uses: ng-htec/workflows/.github/workflows/BuildAndPublishDockerImage.yml@main
+    if: ${{ github.event_name == 'push' && github.push.branches == 'main' && github.push.paths == '1/**' }}
+    with:
+      what_to_build: 1
+    secrets:
+      registry: ${{ secrets.REGISTRY }}
+      username: ${{ secrets.REGISTRY_USERNAME }}
+      password: ${{ secrets.REGISTRY_PASSWORD }}
