@@ -13,12 +13,11 @@ on:
     #   - "1/***"
 
 jobs:
+  uses: ng-htec/workflows/.github/workflows/BuildAndPublishDockerImage.yml@main
   build:
     runs-on: ubuntu-latest
     steps:
-
       - name: Build 1
-        uses: ng-htec/workflows/.github/workflows/BuildAndPublishDockerImage.yml@main
         # if: ${{ github.event_name == 'push' && github.push.branches == 'main' && github.push.paths == '1/**' }}
         with:
           what_to_build: 1
