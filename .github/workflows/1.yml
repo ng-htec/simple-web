@@ -10,7 +10,7 @@ on:
     types: [closed]
     branches: [ main ]
     # paths:
-    #   - "1/**"
+    #   - "1/***"
 
 jobs:
   build:
