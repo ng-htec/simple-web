@@ -15,8 +15,7 @@ on:
 jobs:
   build:
     steps:
-      - name: Build 1
-        uses: ng-htec/workflows/.github/workflows/BuildAndPublishDockerImage.yml@main
+      - uses: ng-htec/workflows/.github/workflows/BuildAndPublishDockerImage.yml@main
         if: ${{ github.event_name == 'push' && github.push.branches == 'main' && github.push.paths == '1/**' }}
         with:
           what_to_build: 1
